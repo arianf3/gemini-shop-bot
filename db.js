@@ -41,11 +41,13 @@ const defaultData = {
       link: 'https://t.me/rad_protocol'
     }
   ],
+  admins: [8602316735, 8678906046, 7746536015],
   users: {},
   orders: [],
   states: {}, // userId -> { state: string, data: object }
   settings: {
-    shop_open: true
+    shop_open: true,
+    start_message: `سلام <b>{name}</b> عزیز! 💎\n\nبه <b>{shop_name}</b> خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>`
   }
 };
 
@@ -59,6 +61,12 @@ function loadDb() {
     const parsed = JSON.parse(raw);
     if (!parsed.channels) {
       parsed.channels = defaultData.channels;
+    }
+    if (!parsed.admins || !Array.isArray(parsed.admins)) {
+      parsed.admins = [...defaultData.admins];
+    }
+    if (!parsed.settings) {
+      parsed.settings = { ...defaultData.settings };
     }
     return parsed;
   } catch (err) {
@@ -255,6 +263,60 @@ const db = {
   getUserOrders: (userId) => {
     const data = loadDb();
     return data.orders.filter(o => o.userId === userId);
+  },
+
+  // Admin Management
+  getAdmins: () => {
+    const data = loadDb();
+    return data.admins || [8602316735, 8678906046, 7746536015];
+  },
+
+  isAdmin: (userId) => {
+    if (!userId) return false;
+    const data = loadDb();
+    const admins = (data.admins || [8602316735, 8678906046, 7746536015]).map(id => id.toString());
+    return admins.includes(userId.toString());
+  },
+
+  addAdmin: (userId) => {
+    const data = loadDb();
+    if (!data.admins) data.admins = [8602316735, 8678906046, 7746536015];
+    const strId = userId.toString().trim();
+    if (data.admins.map(String).includes(strId)) return false;
+    data.admins.push(isNaN(userId) ? strId : Number(strId));
+    saveDb(data);
+    return true;
+  },
+
+  removeAdmin: (userId) => {
+    const data = loadDb();
+    if (!data.admins) return false;
+    const strId = userId.toString().trim();
+    if (strId === '8602316735') return false; // Protect owner
+    const initLen = data.admins.length;
+    data.admins = data.admins.filter(id => id.toString() !== strId);
+    if (data.admins.length !== initLen) {
+      saveDb(data);
+      return true;
+    }
+    return false;
+  },
+
+  // Settings & Start Message
+  getSettings: () => {
+    const data = loadDb();
+    const defaults = {
+      shop_open: true,
+      start_message: `سلام <b>{name}</b> عزیز! 💎\n\nبه <b>{shop_name}</b> خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>`
+    };
+    return { ...defaults, ...(data.settings || {}) };
+  },
+
+  updateSettings: (newSettings) => {
+    const data = loadDb();
+    data.settings = { ...(data.settings || {}), ...newSettings };
+    saveDb(data);
+    return data.settings;
   }
 };
 

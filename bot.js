@@ -36,7 +36,8 @@ function formatPrice(val) {
 }
 
 function isAdmin(userId) {
-  return config.ADMIN_IDS.map(id => id.toString()).includes(userId.toString());
+  if (!userId) return false;
+  return db.isAdmin(userId) || config.ADMIN_IDS.map(id => id.toString()).includes(userId.toString());
 }
 
 // Low-level HTTP / Proxy Request
@@ -197,11 +198,16 @@ function getForceJoinLockUI(missingChannels, userName) {
 // Customer Main Menu
 function getCustomerMainMenu(userId, userName) {
   const adminMode = isAdmin(userId);
-  const text =
-    `سلام <b>${userName || 'کاربر گرامی'}</b> عزیز! 💎\n\n` +
-    `به <b>${config.SHOP_NAME}</b> خوش آمدید.\n` +
+  const settings = db.getSettings();
+  let text = settings.start_message ||
+    `سلام <b>{name}</b> عزیز! 💎\n\n` +
+    `به <b>{shop_name}</b> خوش آمدید.\n` +
     `تمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n` +
     `👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>`;
+
+  text = text
+    .replace(/\{name\}/g, userName || 'کاربر گرامی')
+    .replace(/\{shop_name\}/g, config.SHOP_NAME);
 
   const buttons = [
     [{ text: '🛍 مشاهده و خرید اکانت‌های جمینای', callback_data: 'user_catalog' }],
@@ -325,6 +331,7 @@ function getAdminDashboard() {
   const products = db.getAllProducts().filter(p => p.active !== false);
   const totalUsers = db.getUsersCount();
   const channels = db.getChannels();
+  const admins = db.getAdmins();
 
   const text =
     `🔐 <b>پنل مدیریت ادمین فروشگاه جمینای</b>\n` +
@@ -332,6 +339,7 @@ function getAdminDashboard() {
     `📊 <b>آمار زنده فروشگاه:</b>\n` +
     `• تعداد کل محصولات: <b>${toFaDigits(products.length)} محصول</b>\n` +
     `• تعداد کاربران: <b>${toFaDigits(totalUsers)} نفر</b>\n` +
+    `• تعداد مدیران: <b>${toFaDigits(admins.length)} نفر</b>\n` +
     `• کانال‌های جوین اجباری: <b>${toFaDigits(channels.length)} کانال</b>\n` +
     `━━━━━━━━━━━━━━━━━━\n` +
     `⚙️ <b>یکی از گزینه‌های زیر را انتخاب فرمایید:</b>`;
@@ -345,11 +353,69 @@ function getAdminDashboard() {
         { text: '📦 تغییر سریع موجودی', callback_data: 'admin_quick_stock' }
       ],
       [{ text: '📢 مدیریت کانال‌های جوین اجباری', callback_data: 'admin_channels' }],
+      [
+        { text: '👑 مدیریت مدیران (Admins)', callback_data: 'admin_managers' },
+        { text: '📝 ویرایش متن استارت', callback_data: 'admin_edit_start_text' }
+      ],
       [{ text: '👀 مشاهده ربات از دید مشتری', callback_data: 'user_menu' }]
     ]
   };
 
   return { text, reply_markup: keyboard };
+}
+
+// Admin Managers Management UI
+function getAdminManagersUI() {
+  const admins = db.getAdmins();
+
+  let text =
+    `👑 <b>مدیریت مدیران و ادمین‌های ربات</b>\n` +
+    `━━━━━━━━━━━━━━━━━━\n` +
+    `افراد زیر به پنل مدیریت (/admin) دسترسی کامل دارند:\n\n`;
+
+  admins.forEach((id, idx) => {
+    const isOwner = id.toString() === '8602316735';
+    const tag = isOwner ? '🌟 مدیر ارشد (Owner)' : '👤 ادمین';
+    text += `${toFaDigits(idx + 1)}. ${tag}: <code>${id}</code>\n`;
+  });
+
+  text += `\n👇 <i>جهت افزودن مدیر جدید یا حذف ادمین‌ها انتخاب کنید:</i>`;
+
+  const buttons = [];
+  admins.forEach(id => {
+    if (id.toString() !== '8602316735') {
+      buttons.push([{ text: `🗑 حذف ادمین: ${id}`, callback_data: `admin_del_manager_${id}` }]);
+    }
+  });
+
+  buttons.push([{ text: '➕ افزودن مدیر جدید', callback_data: 'admin_add_manager' }]);
+  buttons.push([{ text: '🔙 بازگشت به پنل مدیریت', callback_data: 'admin_dashboard' }]);
+
+  return { text, reply_markup: { inline_keyboard: buttons } };
+}
+
+// Admin Edit Start Text UI
+function getAdminEditStartTextUI() {
+  const settings = db.getSettings();
+  const currentMsg = settings.start_message || 'تنظیم نشده';
+
+  let text =
+    `📝 <b>تنظیم و ویرایش متن پیام استارت ربات</b>\n` +
+    `━━━━━━━━━━━━━━━━━━\n` +
+    `📌 <b>متن فعلی پیام استارت:</b>\n\n` +
+    `<blockquote>${currentMsg}</blockquote>\n\n` +
+    `💡 <b>متغیرهای هوشمند قابل استفاده در متن:</b>\n` +
+    `• <code>{name}</code> : نام کاربر ارسال‌کننده استارت\n` +
+    `• <code>{shop_name}</code> : نام فروشگاه (${config.SHOP_NAME})\n\n` +
+    `<i>جهت تغییر متن یا بازنشانی از دکمه‌های زیر استفاده کنید:</i>`;
+
+  const buttons = [
+    [{ text: '✏️ ارسال و ثبت متن جدید', callback_data: 'admin_set_new_start_text' }],
+    [{ text: '🔄 بازنشانی به متن پیش‌فرض سیستم', callback_data: 'admin_reset_start_text' }],
+    [{ text: '🔙 بازگشت به پنل مدیریت', callback_data: 'admin_dashboard' }]
+  ];
+
+  return { text, reply_markup: { inline_keyboard: buttons } };
 }
 
 // Admin Channels Management UI
@@ -638,6 +704,69 @@ async function handleMessage(msg) {
             [{ text: '🔐 پنل مدیریت', callback_data: 'admin_dashboard' }]
           ]
         }
+      });
+      return;
+    }
+
+    // Awaiting New Admin ID
+    if (userState.state === 'awaiting_new_admin_id') {
+      let targetId = null;
+      if (msg.forward_from) {
+        targetId = msg.forward_from.id;
+      } else {
+        const clean = text.replace(/[^0-9]/g, '');
+        if (clean) targetId = parseInt(clean, 10);
+      }
+
+      if (!targetId || isNaN(targetId)) {
+        await tgCall('sendMessage', {
+          chat_id: chatId,
+          text: '❌ لطفاً یک آیدی عددی معتبر ارسال کنید یا پیامی از کاربر را اینجا فوروارد کنید:',
+          parse_mode: 'HTML'
+        });
+        return;
+      }
+
+      const added = db.addAdmin(targetId);
+      db.clearState(userId);
+
+      if (added) {
+        await tgCall('sendMessage', {
+          chat_id: chatId,
+          text: `✅ <b>کاربر با آیدی <code>${targetId}</code> با موفقیت به عنوان ادمین ثبت شد!</b>`,
+          parse_mode: 'HTML',
+          reply_markup: getAdminManagersUI().reply_markup
+        });
+      } else {
+        await tgCall('sendMessage', {
+          chat_id: chatId,
+          text: `⚠️ کاربر با آیدی <code>${targetId}</code> قبلاً در لیست ادمین‌ها ثبت شده بود.`,
+          parse_mode: 'HTML',
+          reply_markup: getAdminManagersUI().reply_markup
+        });
+      }
+      return;
+    }
+
+    // Awaiting New Start Text
+    if (userState.state === 'awaiting_new_start_text') {
+      if (!text || text.length < 5) {
+        await tgCall('sendMessage', {
+          chat_id: chatId,
+          text: '❌ متن ارسال شده خیلی کوتاه است. لطفاً متن کامل استارت را وارد کنید:',
+          parse_mode: 'HTML'
+        });
+        return;
+      }
+
+      db.updateSettings({ start_message: text });
+      db.clearState(userId);
+
+      await tgCall('sendMessage', {
+        chat_id: chatId,
+        text: `✅ <b>متن پیام استارت با موفقیت ذخیره شد!</b>\n\n📌 <b>پیش‌نمایش:</b>\n<blockquote>${text}</blockquote>`,
+        parse_mode: 'HTML',
+        reply_markup: getAdminEditStartTextUI().reply_markup
       });
       return;
     }
@@ -1088,6 +1217,109 @@ async function handleCallbackQuery(cq) {
       }
     });
     await tgCall('answerCallbackQuery', { callback_query_id: cqId });
+    return;
+  }
+
+  // Manager (Admin) Management Callbacks
+  if (data === 'admin_managers') {
+    const ui = getAdminManagersUI();
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text: ui.text,
+      parse_mode: 'HTML',
+      reply_markup: ui.reply_markup
+    });
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId });
+    return;
+  }
+
+  if (data === 'admin_add_manager') {
+    db.setState(userId, 'awaiting_new_admin_id', {});
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text:
+        `👑 <b>افزودن مدیر جدید به ربات</b>\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
+        `لطفاً <b>آیدی عددی</b> کاربر مورد نظر را بفرستید یا پیامی از ایشان را داخل همین چت فوروارد (Forward) کنید:\n\n` +
+        `<i>(آیدی عددی را می‌توانید از ربات‌هایی مثل @userinfobot دریافت کنید)</i>`,
+      parse_mode: 'HTML',
+      reply_markup: {
+        inline_keyboard: [[{ text: '🔙 انصراف و بازگشت', callback_data: 'admin_managers' }]]
+      }
+    });
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId });
+    return;
+  }
+
+  if (data.startsWith('admin_del_manager_')) {
+    const targetId = data.replace('admin_del_manager_', '');
+    if (targetId === '8602316735') {
+      await tgCall('answerCallbackQuery', { callback_query_id: cqId, text: '⛔️ حذف مدیر اصلی مجاز نیست!', show_alert: true });
+      return;
+    }
+    db.removeAdmin(targetId);
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId, text: `✅ ادمین ${targetId} حذف شد.`, show_alert: true });
+    const ui = getAdminManagersUI();
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text: ui.text,
+      parse_mode: 'HTML',
+      reply_markup: ui.reply_markup
+    });
+    return;
+  }
+
+  // Start Text Management Callbacks
+  if (data === 'admin_edit_start_text') {
+    const ui = getAdminEditStartTextUI();
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text: ui.text,
+      parse_mode: 'HTML',
+      reply_markup: ui.reply_markup
+    });
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId });
+    return;
+  }
+
+  if (data === 'admin_set_new_start_text') {
+    db.setState(userId, 'awaiting_new_start_text', {});
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text:
+        `📝 <b>تنظیم متن جدید پیام استارت</b>\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
+        `متن مورد نظر خود را ارسال کنید. می‌توانید از تگ‌های HTML (مانند <code>&lt;b&gt;</code>, <code>&lt;code&gt;</code>) استفاده کنید.\n\n` +
+        `📌 <i>کلمات کلیدی قابل استفاده:</i>\n` +
+        `• <code>{name}</code> : نام کاربر ارسال‌کننده استارت\n` +
+        `• <code>{shop_name}</code> : نام فروشگاه\n\n` +
+        `👇 <i>متن را تایپ و ارسال کنید:</i>`,
+      parse_mode: 'HTML',
+      reply_markup: {
+        inline_keyboard: [[{ text: '🔙 انصراف و بازگشت', callback_data: 'admin_edit_start_text' }]]
+      }
+    });
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId });
+    return;
+  }
+
+  if (data === 'admin_reset_start_text') {
+    const defaultMsg = `سلام <b>{name}</b> عزیز! 💎\n\nبه <b>{shop_name}</b> خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>`;
+    db.updateSettings({ start_message: defaultMsg });
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId, text: '✅ متن استارت به حالت پیش‌فرض بازگشت.', show_alert: true });
+    const ui = getAdminEditStartTextUI();
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text: ui.text,
+      parse_mode: 'HTML',
+      reply_markup: ui.reply_markup
+    });
     return;
   }
 }
