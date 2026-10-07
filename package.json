@@ -1,0 +1,12 @@
+{
+  "name": "gemini-shop-bot",
+  "version": "1.0.0",
+  "description": "Telegram Shop Bot for Gemini Accounts with Interactive Admin Management (Price, Stock & Catalog)",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": ["telegram", "gemini", "shop-bot", "ecommerce"],
+  "author": "Arian Dev",
+  "license": "MIT"
+}
