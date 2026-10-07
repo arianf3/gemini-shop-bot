@@ -203,17 +203,21 @@ const db = {
     if (!data.users[user.id]) {
       data.users[user.id] = {
         id: user.id,
-        first_name: user.first_name,
-        username: user.username,
+        first_name: user.first_name || user.name || '',
+        username: user.username || '',
         joinedAt: new Date().toISOString(),
         ordersCount: 0
       };
     } else {
-      data.users[user.id].first_name = user.first_name;
-      data.users[user.id].username = user.username;
+      if (user.first_name || user.name) data.users[user.id].first_name = user.first_name || user.name;
+      if (user.username !== undefined) data.users[user.id].username = user.username;
     }
     saveDb(data);
     return data.users[user.id];
+  },
+
+  saveUser: function(user) {
+    return this.touchUser(user);
   },
 
   getUsersCount: () => {

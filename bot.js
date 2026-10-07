@@ -42,53 +42,48 @@ function isAdmin(userId) {
 // Low-level HTTP / Proxy Request
 function request(urlStr, options = {}) {
   return new Promise((resolve, reject) => {
-    const url = new URL(urlStr);
-    const isHttps = url.protocol === 'https:';
+    const parsed = new URL(urlStr);
+    const isHttps = parsed.protocol === 'https:';
 
-    if (PROXY_URL) {
-      try {
-        const proxy = new URL(PROXY_URL);
-        const port = url.port || (isHttps ? 443 : 80);
-        const connectReq = http.request({
-          host: proxy.hostname,
-          port: proxy.port,
+    if (PROXY_URL && (parsed.hostname.includes('telegram.org') || options.useProxy)) {
+      const p = new URL(PROXY_URL);
+      if (isHttps) {
+        const req = http.request({
+          host: p.hostname,
+          port: p.port,
           method: 'CONNECT',
-          path: `${url.hostname}:${port}`
+          path: `${parsed.hostname}:${parsed.port || 443}`
         });
 
-        connectReq.on('connect', (res, socket) => {
+        req.on('connect', (res, socket) => {
           if (res.statusCode !== 200) {
-            reject(new Error(`Proxy CONNECT error: ${res.statusCode}`));
-            return;
+            return reject(new Error(`Proxy CONNECT error: ${res.statusCode}`));
           }
-
-          let clientSocket = socket;
-          if (isHttps) {
-            clientSocket = tls.connect({
-              socket,
-              servername: url.hostname
+          const secureSocket = tls.connect({
+            socket,
+            servername: parsed.hostname
+          }, () => {
+            const tlsReq = https.request({
+              host: parsed.hostname,
+              path: parsed.pathname + parsed.search,
+              method: options.method || 'GET',
+              headers: options.headers || {},
+              createConnection: () => secureSocket
+            }, (tlsRes) => {
+              let data = '';
+              tlsRes.on('data', chunk => data += chunk);
+              tlsRes.on('end', () => resolve({ statusCode: tlsRes.statusCode, data }));
             });
-          }
-
-          const targetReq = (isHttps ? https : http).request(urlStr, {
-            ...options,
-            createConnection: () => clientSocket
-          }, (targetRes) => {
-            let data = '';
-            targetRes.on('data', chunk => data += chunk);
-            targetRes.on('end', () => resolve({ statusCode: targetRes.statusCode, data }));
+            tlsReq.on('error', reject);
+            if (options.body) tlsReq.write(options.body);
+            tlsReq.end();
           });
-
-          targetReq.on('error', reject);
-          if (options.body) targetReq.write(options.body);
-          targetReq.end();
+          secureSocket.on('error', reject);
         });
 
-        connectReq.on('error', reject);
-        connectReq.end();
+        req.on('error', reject);
+        req.end();
         return;
-      } catch (err) {
-        console.error('Proxy setup error:', err);
       }
     }
 
@@ -96,7 +91,7 @@ function request(urlStr, options = {}) {
     const req = client.request(urlStr, options, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve({ statusCode: targetRes.statusCode, data }));
+      res.on('end', () => resolve({ statusCode: res.statusCode, data }));
     });
     req.on('error', reject);
     if (options.body) req.write(options.body);
@@ -210,6 +205,7 @@ function getCustomerMainMenu(userId, userName) {
 
   const buttons = [
     [{ text: '🛍 مشاهده و خرید اکانت‌های جمینای', callback_data: 'user_catalog' }],
+    [{ text: '🌐 ورود به وب‌سایت و کاتالوگ فروشگاه', web_app: { url: 'https://arianf3.github.io/gemini-shop-bot/' } }],
     [
       { text: '📦 سفارشات من', callback_data: 'user_orders' },
       { text: '💳 راهنمای خرید و تحویل', callback_data: 'user_guide' }
