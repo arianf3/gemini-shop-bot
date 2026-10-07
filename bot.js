@@ -352,6 +352,7 @@ function getAdminDashboard() {
         { text: '✏️ تغییر سریع قیمت', callback_data: 'admin_quick_price' },
         { text: '📦 تغییر سریع موجودی', callback_data: 'admin_quick_stock' }
       ],
+      [{ text: '👥 لیست کاربران ربات (استارت‌زده‌ها)', callback_data: 'admin_users_list_1' }],
       [{ text: '📢 مدیریت کانال‌های جوین اجباری', callback_data: 'admin_channels' }],
       [
         { text: '👑 مدیریت مدیران (Admins)', callback_data: 'admin_managers' },
@@ -362,6 +363,58 @@ function getAdminDashboard() {
   };
 
   return { text, reply_markup: keyboard };
+}
+
+// Admin Users List UI with Pagination
+function getAdminUsersListUI(page = 1) {
+  const users = db.getAllUsers();
+  const perPage = 5;
+  const totalUsers = users.length;
+  const totalPages = Math.ceil(totalUsers / perPage) || 1;
+  const currentPage = Math.max(1, Math.min(page, totalPages));
+
+  const startIdx = (currentPage - 1) * perPage;
+  const pagedUsers = users.slice(startIdx, startIdx + perPage);
+
+  let text =
+    `👥 <b>لیست کاربران ربات (افراد استارت‌زده)</b>\n` +
+    `━━━━━━━━━━━━━━━━━━\n` +
+    `📊 <b>تعداد کل کاربران:</b> <b>${toFaDigits(totalUsers)} نفر</b>\n` +
+    `📄 <b>صفحه:</b> <b>${toFaDigits(currentPage)} از ${toFaDigits(totalPages)}</b>\n\n`;
+
+  if (totalUsers === 0) {
+    text += `<i>هنوز هیچ کاربری ربات را استارت نکرده است.</i>\n`;
+  } else {
+    pagedUsers.forEach((u, i) => {
+      const globalIdx = startIdx + i + 1;
+      const name = u.first_name || 'بدون نام';
+      const userTag = u.username ? `@${u.username}` : 'ندارد';
+      const dateStr = u.joinedAt ? new Date(u.joinedAt).toLocaleString('fa-IR', { timeZone: 'Asia/Tehran' }) : '--';
+      const orders = u.ordersCount || 0;
+
+      text +=
+        `${toFaDigits(globalIdx)}. 👤 <b>${name}</b> (${userTag})\n` +
+        `   🆔 آیدی عددی: <code>${u.id}</code>\n` +
+        `   📅 عضویت: <i>${dateStr}</i>\n` +
+        `   🛍 تعداد سفارشات: <b>${toFaDigits(orders)} عدد</b>\n\n`;
+    });
+  }
+
+  const navButtons = [];
+  if (currentPage > 1) {
+    navButtons.push({ text: '◀️ صفحه قبلی', callback_data: `admin_users_list_${currentPage - 1}` });
+  }
+  navButtons.push({ text: '🔄 بروزرسانی', callback_data: `admin_users_list_${currentPage}` });
+  if (currentPage < totalPages) {
+    navButtons.push({ text: 'صفحه بعدی ▶️', callback_data: `admin_users_list_${currentPage + 1}` });
+  }
+
+  const keyboard = [
+    navButtons,
+    [{ text: '🔙 بازگشت به پنل مدیریت', callback_data: 'admin_dashboard' }]
+  ];
+
+  return { text, reply_markup: { inline_keyboard: keyboard } };
 }
 
 // Admin Managers Management UI
@@ -1215,6 +1268,21 @@ async function handleCallbackQuery(cq) {
       reply_markup: {
         inline_keyboard: [[{ text: '🔙 انصراف و بازگشت', callback_data: 'admin_dashboard' }]]
       }
+    });
+    await tgCall('answerCallbackQuery', { callback_query_id: cqId });
+    return;
+  }
+
+  // Admin Users List Callback
+  if (data.startsWith('admin_users_list_')) {
+    const pageNum = parseInt(data.replace('admin_users_list_', ''), 10) || 1;
+    const ui = getAdminUsersListUI(pageNum);
+    await tgCall('editMessageText', {
+      chat_id: chatId,
+      message_id: messageId,
+      text: ui.text,
+      parse_mode: 'HTML',
+      reply_markup: ui.reply_markup
     });
     await tgCall('answerCallbackQuery', { callback_query_id: cqId });
     return;

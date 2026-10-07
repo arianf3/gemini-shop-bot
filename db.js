@@ -233,6 +233,11 @@ const db = {
     return Object.keys(data.users).length;
   },
 
+  getAllUsers: () => {
+    const data = loadDb();
+    return Object.values(data.users || {}).sort((a, b) => new Date(b.joinedAt || 0) - new Date(a.joinedAt || 0));
+  },
+
   // Orders
   createOrder: (userId, productId) => {
     const data = loadDb();
