@@ -119,9 +119,19 @@ async function tgCall(method, payload = {}) {
   }
 }
 
+// In-memory cache for channel membership verification (TTL: 3 minutes)
+const membershipCache = new Map();
+
 // Check membership across dynamic channels
-async function checkUserMembership(userId) {
+async function checkUserMembership(userId, forceRefresh = false) {
   if (isAdmin(userId)) return { ok: true, missing: [] };
+
+  if (!forceRefresh) {
+    const cached = membershipCache.get(userId.toString());
+    if (cached && (Date.now() - cached.timestamp < 180000)) {
+      if (cached.ok) return { ok: true, missing: [] };
+    }
+  }
 
   const channels = db.getChannels();
   if (!channels || channels.length === 0) return { ok: true, missing: [] };
@@ -169,7 +179,14 @@ async function checkUserMembership(userId) {
     }
   }
 
-  return { ok: missing.length === 0, missing };
+  const isOk = missing.length === 0;
+  if (isOk) {
+    membershipCache.set(userId.toString(), { ok: true, timestamp: Date.now() });
+  } else {
+    membershipCache.delete(userId.toString());
+  }
+
+  return { ok: isOk, missing };
 }
 
 // Force-Join Lock Screen UI
@@ -876,9 +893,15 @@ async function handleCallbackQuery(cq) {
   const messageId = cq.message.message_id;
   const data = cq.data;
 
+  // Immediately dismiss button loading spinner on general navigation buttons
+  const isAlertAction = data === 'verify_join' || data.includes('alert_') || data.startsWith('admin_del_');
+  if (!isAlertAction) {
+    tgCall('answerCallbackQuery', { callback_query_id: cqId }).catch(() => {});
+  }
+
   // 0. Verify Join Button
   if (data === 'verify_join') {
-    const membership = await checkUserMembership(userId);
+    const membership = await checkUserMembership(userId, true);
     if (!membership.ok) {
       await tgCall('answerCallbackQuery', {
         callback_query_id: cqId,
