@@ -17,7 +17,7 @@ module.exports = {
     7746536015
   ],
   CHANNEL_USERNAME: '@rad_protocol',
-  SUPPORT_USERNAME: '@radprotocoll',
+  SUPPORT_USERNAME: '@xHAMISHEGI',
   // On Render or Cloud, no proxy is needed (direct connection to Telegram API)
   PROXY_URL: (process.env.RENDER || process.env.NODE_ENV === 'production') ? '' : (process.env.TELEGRAM_PROXY || 'http://127.0.0.1:20808'),
   SHOP_NAME: 'فروشگاه تخصصی اکانت‌های جمینای | Gemini Store',
