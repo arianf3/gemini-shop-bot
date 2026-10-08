@@ -36,6 +36,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791459431359",
+      "name": "یک",
+      "category": "اکانت جمینای",
+      "price": 350000,
+      "stock": 10,
+      "description": "گا",
+      "active": true,
+      "createdAt": "2026-10-08T11:37:11.359Z"
     }
   ],
   "users": {
