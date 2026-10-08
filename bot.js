@@ -1448,13 +1448,97 @@ async function pollUpdates() {
   }
 }
 
+// ===================== HTTP SERVER & RENDER SUPPORT =====================
+const fs = require('fs');
+const path = require('path');
+
+const PORT = process.env.PORT || 3000;
+const WEBHOOK_URL = process.env.WEBHOOK_URL || '';
+
+const server = http.createServer(async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200);
+    res.end();
+    return;
+  }
+
+  // Health check & WebApp serving
+  if (req.url === '/' || req.url === '/health') {
+    const indexPath = path.join(__dirname, 'index.html');
+    if (fs.existsSync(indexPath)) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      fs.createReadStream(indexPath).pipe(res);
+      return;
+    }
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({
+      status: 'ok',
+      service: 'gemini-shop-bot',
+      bot: '@Gifty_buyapp_bot',
+      timestamp: new Date().toISOString()
+    }));
+    return;
+  }
+
+  // Webhook Endpoint
+  if (req.method === 'POST' && req.url === '/webhook') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', async () => {
+      try {
+        if (body) {
+          const update = JSON.parse(body);
+          if (update.message) {
+            await handleMessage(update.message);
+          } else if (update.callback_query) {
+            await handleCallbackQuery(update.callback_query);
+          }
+        }
+      } catch (err) {
+        console.error('Webhook error:', err.message);
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true }));
+    });
+    return;
+  }
+
+  res.writeHead(404, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify({ error: 'Not found' }));
+});
+
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`🌐 HTTP Server running on port ${PORT}`);
+});
+
+// Self-ping Keep-Alive on Render to stay online 24/7
+const pingTarget = process.env.RENDER_EXTERNAL_URL || process.env.KEEP_ALIVE_URL;
+if (pingTarget) {
+  console.log(`🔄 Self-ping keep-alive activated for: ${pingTarget}`);
+  setInterval(() => {
+    https.get(`${pingTarget}/health`, () => {}).on('error', () => {});
+  }, 10 * 60 * 1000);
+}
+
 // Start bot
 console.log('🤖 Gemini Shop Bot initialized.');
 if (!BOT_TOKEN) {
   console.log('⚠️ BOT_TOKEN is empty. Set BOT_TOKEN in config.js or pass via environment variable.');
 } else {
-  console.log('🚀 Starting polling loop with token:', BOT_TOKEN.slice(0, 10) + '...');
-  pollUpdates();
+  if (WEBHOOK_URL) {
+    const webhookEndpoint = `${WEBHOOK_URL.replace(/\/$/, '')}/webhook`;
+    console.log(`🚀 Setting webhook to: ${webhookEndpoint}`);
+    tgCall('setWebhook', { url: webhookEndpoint, drop_pending_updates: true }).then(res => {
+      console.log('Webhook result:', res);
+    });
+  } else {
+    console.log('🚀 Starting polling loop with token:', BOT_TOKEN.slice(0, 10) + '...');
+    pollUpdates();
+  }
 }
 
 module.exports = {
