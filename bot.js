@@ -1,5 +1,5 @@
 /**
- * Gemini Accounts Telegram Shop Bot (@Gifty_buyapp_bot)
+ * Gemini Accounts Telegram Shop Bot (@theKiANshop_bot)
  * Customer Catalog, Glass Button Icons, Dynamic Force-Join & Admin Management
  */
 
@@ -1478,7 +1478,7 @@ const server = http.createServer(async (req, res) => {
     res.end(JSON.stringify({
       status: 'ok',
       service: 'gemini-shop-bot',
-      bot: '@Gifty_buyapp_bot',
+      bot: '@theKiANshop_bot',
       timestamp: new Date().toISOString()
     }));
     return;

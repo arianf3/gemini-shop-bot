@@ -1,12 +1,12 @@
 services:
   - type: web
-    name: gemini-shop-bot
+    name: kian-gemini-shop
     env: node
     plan: free
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: BOT_TOKEN
-        value: YOUR_BOT_TOKEN_HERE
+        sync: false
       - key: PORT
         value: 3000
