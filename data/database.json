@@ -10,15 +10,6 @@
       "active": false
     },
     {
-      "id": "gemini_adv_share",
-      "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "category": "اشتراکی",
-      "price": 160000,
-      "stock": 23,
-      "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
-      "active": true
-    },
-    {
       "id": "gemini_api_pro",
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
@@ -59,35 +50,9 @@
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
       "ordersCount": 0
-    },
-    "7976719581": {
-      "id": 7976719581,
-      "first_name": "KiAN",
-      "username": "",
-      "joinedAt": "2026-10-08T13:43:21.642Z",
-      "ordersCount": 2
     }
   },
-  "orders": [
-    {
-      "orderId": "ORD-482604",
-      "userId": 7976719581,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
-      "status": "pending_payment",
-      "createdAt": "2026-10-08T13:43:34.425Z"
-    },
-    {
-      "orderId": "ORD-543504",
-      "userId": 7976719581,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
-      "status": "pending_payment",
-      "createdAt": "2026-10-08T13:43:46.935Z"
-    }
-  ],
+  "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
@@ -95,9 +60,9 @@
   },
   "channels": [
     {
-      "username": "my_vibe747",
-      "title": "\"𝗥𝗲𝗮𝗹",
-      "link": "https://t.me/my_vibe747"
+      "username": "rad_protocol",
+      "title": "کانال رسمی RadProtocol",
+      "link": "https://t.me/rad_protocol"
     }
   ],
   "admins": [
