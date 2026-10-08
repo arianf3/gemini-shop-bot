@@ -761,9 +761,15 @@
       </div>
 
       <div class="card-pay-box">
-        <span style="font-size: 0.8rem; color: #94a3b8;">شماره کارت جهت واریز (کلیک جهت کپی):</span>
-        <div class="card-number" onclick="copyCard()">۶۰۳۷-۹۹۷۰-۰۰۰۰-۰۰۰۰</div>
+        <span style="font-size: 0.8rem; color: #94a3b8;">روش ۱: واریز کارت‌به‌کارت (ریالی):</span>
+        <div class="card-number" id="cardNumberBox" onclick="copyCard()">۶۰۳۷-۹۹۷۰-۰۰۰۰-۰۰۰۰</div>
         <div style="font-size: 0.78rem; color: #38bdf8;" id="copyAlert">به نام مدیریت فروشگاه</div>
+      </div>
+
+      <div class="card-pay-box" style="margin-top: 10px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15)); border-color: rgba(16, 185, 129, 0.3);">
+        <span style="font-size: 0.8rem; color: #94a3b8;">روش ۲: پرداخت با ارز تون (TON Wallet):</span>
+        <div class="card-number" id="tonWalletBox" onclick="copyWallet()" style="font-size: 0.85rem; word-break: break-all; letter-spacing: 0;">UQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
+        <div style="font-size: 0.78rem; color: #10b981;" id="walletAlert">کلیک جهت کپی آدرس ولت تون</div>
       </div>
 
       <button class="btn-submit-order" onclick="redirectToBot()">
@@ -804,9 +810,19 @@
         const data = await res.json();
         allProducts = (data.products || []).filter(p => p.active !== false);
         
-        if (data.settings && data.settings.card_number) {
-          const cardEl = document.querySelector('.card-number');
-          if (cardEl) cardEl.textContent = data.settings.card_number;
+        if (data.settings) {
+          if (data.settings.card_number) {
+            const cardEl = document.getElementById('cardNumberBox');
+            if (cardEl) cardEl.textContent = data.settings.card_number;
+          }
+          if (data.settings.card_holder) {
+            const holderEl = document.getElementById('copyAlert');
+            if (holderEl) holderEl.textContent = `به نام ${data.settings.card_holder}`;
+          }
+          if (data.settings.store_ton_wallet) {
+            const walletEl = document.getElementById('tonWalletBox');
+            if (walletEl) walletEl.textContent = data.settings.store_ton_wallet;
+          }
         }
 
         renderProducts(allProducts);
@@ -882,13 +898,26 @@
     }
 
     function copyCard() {
-      const cardEl = document.querySelector('.card-number');
+      const cardEl = document.getElementById('cardNumberBox') || document.querySelector('.card-number');
       const cardRaw = cardEl ? cardEl.textContent.replace(/-/g, '').replace(/ /g, '') : '6037997000000000';
       navigator.clipboard.writeText(cardRaw).then(() => {
         const alertEl = document.getElementById('copyAlert');
         alertEl.textContent = '✅ شماره کارت با موفقیت کپی شد!';
         setTimeout(() => {
           alertEl.textContent = 'به نام مدیریت فروشگاه';
+        }, 2500);
+      });
+    }
+
+    function copyWallet() {
+      const walletEl = document.getElementById('tonWalletBox');
+      const walletRaw = walletEl ? walletEl.textContent.trim() : '';
+      if (!walletRaw) return;
+      navigator.clipboard.writeText(walletRaw).then(() => {
+        const alertEl = document.getElementById('walletAlert');
+        alertEl.textContent = '✅ آدرس ولت تون کپی شد!';
+        setTimeout(() => {
+          alertEl.textContent = 'کلیک جهت کپی آدرس ولت تون';
         }, 2500);
       });
     }
