@@ -1,16 +1,6 @@
 {
   "products": [
     {
-      "id": "ton_coin_package",
-      "name": "💎 خرید تون‌کوین (TON)",
-      "category": "ارز دیجیتال و تون",
-      "price": 380000,
-      "stock": 50,
-      "description": "• واریز مستقیم به کیف‌پول شخصی (Tonkeeper / MyTonWallet)\n• بدون نیاز به احراز هویت پیچیده\n• انتقال آنی روی شبکه رسمی TON با کمترین کارمزد\n• ارسال کد پیگیری و هش تراکنش (Tx Hash) بلاکچین پس از واریز",
-      "active": true,
-      "requiresWallet": true
-    },
-    {
       "id": "gemini_adv_1m",
       "name": "اکانت اختصاصی Gemini Advanced (۱ ماهه)",
       "category": "اختصاصی",
@@ -24,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 25,
+      "stock": 24,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -33,7 +23,7 @@
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
       "price": 490000,
-      "stock": 4,
+      "stock": 8,
       "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
       "active": true
     },
@@ -54,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -71,7 +61,17 @@
       "ordersCount": 0
     }
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "ORD-896226",
+      "userId": 1857419718,
+      "productId": "gemini_adv_share",
+      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "price": 160000,
+      "status": "pending_payment",
+      "createdAt": "2026-10-08T15:28:31.322Z"
+    }
+  ],
   "states": {},
   "settings": {
     "shop_open": true,
