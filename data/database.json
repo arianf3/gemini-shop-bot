@@ -10,6 +10,24 @@
       "active": false
     },
     {
+      "id": "gemini_adv_share",
+      "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "category": "اشتراکی",
+      "price": 160000,
+      "stock": 25,
+      "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
+      "active": true
+    },
+    {
+      "id": "gemini_api_pro",
+      "name": "اکانت و لایسنس Gemini 1.5 Pro API",
+      "category": "توسعه‌دهندگان",
+      "price": 490000,
+      "stock": 8,
+      "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
+      "active": true
+    },
+    {
       "id": "prod_1791382349589",
       "name": "اکانت ۶ ماهه Ultra Gemini",
       "category": "عمومی",
@@ -18,16 +36,6 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
-    },
-    {
-      "id": "prod_1791467326875",
-      "name": "اکانت فیک نامبر امریکا ریپ عموم📊",
-      "category": "اکانت جمینای",
-      "price": 210000,
-      "stock": 0,
-      "description": "ریپ عموم رنج امریکا",
-      "active": true,
-      "createdAt": "2026-10-08T13:48:46.875Z"
     }
   ],
   "users": {
@@ -36,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -51,31 +59,22 @@
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
       "ordersCount": 0
+    },
+    "7976719581": {
+      "id": 7976719581,
+      "first_name": "KiAN",
+      "username": "",
+      "joinedAt": "2026-10-08T13:51:46.054Z",
+      "ordersCount": 0
     }
   },
-  "orders": [
-    {
-      "orderId": "ORD-705533",
-      "userId": 1857419718,
-      "productId": "prod_1791467326875",
-      "productName": "اکانت فیک نامبر امریکا ریپ عموم📊",
-      "price": 210000,
-      "status": "pending_payment",
-      "createdAt": "2026-10-08T13:49:02.664Z"
-    }
-  ],
+  "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
     "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
-  "channels": [
-    {
-      "username": "rad_protocol",
-      "title": "کانال رسمی RadProtocol",
-      "link": "https://t.me/rad_protocol"
-    }
-  ],
+  "channels": [],
   "admins": [
     8602316735,
     8678906046,
