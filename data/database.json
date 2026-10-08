@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 23,
+      "stock": 25,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -23,7 +23,7 @@
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
       "price": 490000,
-      "stock": 8,
+      "stock": 7,
       "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
       "active": true
     },
@@ -36,16 +36,6 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
-    },
-    {
-      "id": "prod_1791473358856",
-      "name": "ه",
-      "category": "اکانت جمینای",
-      "price": 68346,
-      "stock": 7,
-      "description": "ه",
-      "active": true,
-      "createdAt": "2026-10-08T15:29:18.856Z"
     }
   ],
   "users": {
@@ -54,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 2
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -65,32 +55,21 @@
     },
     "8678906046": {
       "id": 8678906046,
-      "first_name": "Arian",
+      "first_name": "Mani",
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
-      "ordersCount": 0
+      "ordersCount": 1
     }
   },
   "orders": [
     {
-      "orderId": "ORD-896226",
-      "userId": 1857419718,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
+      "orderId": "ORD-779380",
+      "userId": 8678906046,
+      "productId": "gemini_api_pro",
+      "productName": "اکانت و لایسنس Gemini 1.5 Pro API",
+      "price": 490000,
       "status": "pending_payment",
-      "createdAt": "2026-10-08T15:28:31.322Z"
-    },
-    {
-      "orderId": "ORD-136290",
-      "userId": 1857419718,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
-      "status": "delivered",
-      "createdAt": "2026-10-08T15:28:42.228Z",
-      "deliveredAt": "2026-10-08T15:28:54.771Z",
-      "deliveryText": "خخخ"
+      "createdAt": "2026-10-08T15:35:42.930Z"
     }
   ],
   "states": {},
