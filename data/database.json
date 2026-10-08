@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 25,
+      "stock": 24,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -23,7 +23,7 @@
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
       "price": 490000,
-      "stock": 7,
+      "stock": 8,
       "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
       "active": true
     },
@@ -36,16 +36,6 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
-    },
-    {
-      "id": "prod_1791473954188",
-      "name": "هل",
-      "category": "اکانت جمینای",
-      "price": 732,
-      "stock": 7,
-      "description": "3",
-      "active": true,
-      "createdAt": "2026-10-08T15:39:14.188Z"
     }
   ],
   "users": {
@@ -54,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 2
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -73,24 +63,13 @@
   },
   "orders": [
     {
-      "orderId": "ORD-635117",
+      "orderId": "ORD-375417",
       "userId": 1857419718,
-      "productId": "prod_1791473954188",
-      "productName": "هل",
-      "price": 732,
+      "productId": "gemini_adv_share",
+      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "price": 160000,
       "status": "pending_payment",
-      "createdAt": "2026-10-08T15:42:20.724Z"
-    },
-    {
-      "orderId": "ORD-699144",
-      "userId": 1857419718,
-      "productId": "gemini_api_pro",
-      "productName": "اکانت و لایسنس Gemini 1.5 Pro API",
-      "price": 490000,
-      "status": "delivered",
-      "createdAt": "2026-10-08T15:42:31.353Z",
-      "deliveredAt": "2026-10-08T15:42:42.865Z",
-      "deliveryText": "ب"
+      "createdAt": "2026-10-08T16:04:34.316Z"
     }
   ],
   "states": {},
