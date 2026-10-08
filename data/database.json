@@ -1,6 +1,16 @@
 {
   "products": [
     {
+      "id": "ton_coin_package",
+      "name": "💎 خرید تون‌کوین (TON)",
+      "category": "ارز دیجیتال و تون",
+      "price": 380000,
+      "stock": 50,
+      "description": "• واریز مستقیم به کیف‌پول شخصی (Tonkeeper / MyTonWallet)\n• بدون نیاز به احراز هویت پیچیده\n• انتقال آنی روی شبکه رسمی TON با کمترین کارمزد\n• ارسال کد پیگیری و هش تراکنش (Tx Hash) بلاکچین پس از واریز",
+      "active": true,
+      "requiresWallet": true
+    },
+    {
       "id": "gemini_adv_1m",
       "name": "اکانت اختصاصی Gemini Advanced (۱ ماهه)",
       "category": "اختصاصی",
