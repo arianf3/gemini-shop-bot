@@ -1,0 +1,82 @@
+{
+  "products": [
+    {
+      "id": "gemini_adv_1m",
+      "name": "اکانت اختصاصی Gemini Advanced (۱ ماهه)",
+      "category": "اختصاصی",
+      "price": 390000,
+      "stock": 12,
+      "description": "• فعال‌سازی روی جیمیل شما یا اکانت آماده\n• دسترسی به مدل‌های Ultra و 1.5 Pro با سقف نامحدود\n• همراه با ۲ ترابایت فضای ابری Google One\n• گارانتی و پشتیبانی کامل ۳۰ روزه",
+      "active": false
+    },
+    {
+      "id": "gemini_adv_share",
+      "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "category": "اشتراکی",
+      "price": 160000,
+      "stock": 25,
+      "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
+      "active": true
+    },
+    {
+      "id": "gemini_api_pro",
+      "name": "اکانت و لایسنس Gemini 1.5 Pro API",
+      "category": "توسعه‌دهندگان",
+      "price": 490000,
+      "stock": 8,
+      "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
+      "active": true
+    },
+    {
+      "id": "prod_1791382349589",
+      "name": "اکانت ۶ ماهه Ultra Gemini",
+      "category": "عمومی",
+      "price": 990000,
+      "stock": 20,
+      "description": "اکانت اولترا با بالاترین سرعت",
+      "active": false,
+      "createdAt": "2026-10-07T14:12:29.589Z"
+    }
+  ],
+  "users": {
+    "1857419718": {
+      "id": 1857419718,
+      "first_name": "KiAN",
+      "username": "xHAMISHEGI",
+      "joinedAt": "2026-10-07T19:24:48.111Z",
+      "ordersCount": 0
+    },
+    "8602316735": {
+      "id": 8602316735,
+      "first_name": "Arian",
+      "username": "",
+      "joinedAt": "2026-10-07T16:22:19.142Z",
+      "ordersCount": 0
+    },
+    "8678906046": {
+      "id": 8678906046,
+      "first_name": "Arian",
+      "username": "arianf3",
+      "joinedAt": "2026-10-07T16:29:28.169Z",
+      "ordersCount": 0
+    }
+  },
+  "orders": [],
+  "states": {},
+  "settings": {
+    "shop_open": true
+  },
+  "channels": [
+    {
+      "username": "rad_protocol",
+      "title": "کانال رسمی RadProtocol",
+      "link": "https://t.me/rad_protocol"
+    }
+  ],
+  "admins": [
+    8602316735,
+    8678906046,
+    7746536015,
+    1857419718
+  ]
+}
