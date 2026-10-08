@@ -23,7 +23,7 @@
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
       "price": 490000,
-      "stock": 8,
+      "stock": 7,
       "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
       "active": true
     },
@@ -54,7 +54,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 2
     },
     "8602316735": {
       "id": 8602316735,
@@ -80,6 +80,17 @@
       "price": 732,
       "status": "pending_payment",
       "createdAt": "2026-10-08T15:42:20.724Z"
+    },
+    {
+      "orderId": "ORD-699144",
+      "userId": 1857419718,
+      "productId": "gemini_api_pro",
+      "productName": "اکانت و لایسنس Gemini 1.5 Pro API",
+      "price": 490000,
+      "status": "delivered",
+      "createdAt": "2026-10-08T15:42:31.353Z",
+      "deliveredAt": "2026-10-08T15:42:42.865Z",
+      "deliveryText": "ب"
     }
   ],
   "states": {},
