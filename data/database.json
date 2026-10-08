@@ -42,7 +42,7 @@
       "name": "یک",
       "category": "اکانت جمینای",
       "price": 350000,
-      "stock": 10,
+      "stock": 0,
       "description": "گا",
       "active": true,
       "createdAt": "2026-10-08T11:37:11.359Z"
