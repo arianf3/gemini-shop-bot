@@ -36,6 +36,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791459431359",
+      "name": "یک",
+      "category": "اکانت جمینای",
+      "price": 350000,
+      "stock": 0,
+      "description": "گا",
+      "active": true,
+      "createdAt": "2026-10-08T11:37:11.359Z"
     }
   ],
   "users": {
@@ -59,22 +69,23 @@
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
       "ordersCount": 0
-    },
-    "7976719581": {
-      "id": 7976719581,
-      "first_name": "KiAN",
-      "username": "",
-      "joinedAt": "2026-10-08T13:51:46.054Z",
-      "ordersCount": 0
     }
   },
   "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
+    "start_message": "سلام <b>{name}</b> عزیز! 💎\\n\\nبه <b>{shop_name}</b> خوش آمدید.\\nتمامی اشتراک‌ها و اکانت‌های پرمیوم و هوش مصنوعی با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\\n\\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>",
+    "card_number": "۶۰۳۷-۹۹۷۰-۰۰۰۰-۰۰۰۰",
+    "card_holder": "کیان (مدیریت فروشگاه)"
   },
-  "channels": [],
+  "channels": [
+    {
+      "username": "rad_protocol",
+      "title": "کانال رسمی RadProtocol",
+      "link": "https://t.me/rad_protocol"
+    }
+  ],
   "admins": [
     8602316735,
     8678906046,
