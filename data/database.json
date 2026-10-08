@@ -38,14 +38,14 @@
       "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
-      "id": "prod_1791473894225",
-      "name": "نب",
+      "id": "prod_1791473954188",
+      "name": "هل",
       "category": "اکانت جمینای",
-      "price": 683436,
-      "stock": 6,
-      "description": "54",
+      "price": 732,
+      "stock": 8,
+      "description": "3",
       "active": true,
-      "createdAt": "2026-10-08T15:38:14.225Z"
+      "createdAt": "2026-10-08T15:39:14.188Z"
     }
   ],
   "users": {
@@ -54,7 +54,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -71,17 +71,7 @@
       "ordersCount": 0
     }
   },
-  "orders": [
-    {
-      "orderId": "ORD-166860",
-      "userId": 1857419718,
-      "productId": "prod_1791473894225",
-      "productName": "نب",
-      "price": 683436,
-      "status": "pending_payment",
-      "createdAt": "2026-10-08T15:38:28.273Z"
-    }
-  ],
+  "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
