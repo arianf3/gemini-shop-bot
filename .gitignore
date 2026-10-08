@@ -1,3 +1,4 @@
 .env
+worker.js
 node_modules
 *.log

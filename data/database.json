@@ -64,7 +64,8 @@
   "orders": [],
   "states": {},
   "settings": {
-    "shop_open": true
+    "shop_open": true,
+    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
   "channels": [
     {
