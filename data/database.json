@@ -44,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -58,18 +58,18 @@
       "first_name": "Arian",
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
-      "ordersCount": 0
+      "ordersCount": 1
     }
   },
   "orders": [
     {
-      "orderId": "ORD-375417",
-      "userId": 1857419718,
+      "orderId": "ORD-942564",
+      "userId": 8678906046,
       "productId": "gemini_adv_share",
       "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "price": 160000,
       "status": "pending_payment",
-      "createdAt": "2026-10-08T16:04:34.316Z"
+      "createdAt": "2026-10-08T16:25:13.372Z"
     }
   ],
   "states": {},
