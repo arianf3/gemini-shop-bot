@@ -24,7 +24,7 @@
       "name": "اکانت فیک نامبر امریکا ریپ عموم📊",
       "category": "اکانت جمینای",
       "price": 210000,
-      "stock": 1,
+      "stock": 0,
       "description": "ریپ عموم رنج امریکا",
       "active": true,
       "createdAt": "2026-10-08T13:48:46.875Z"
@@ -36,7 +36,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -53,7 +53,17 @@
       "ordersCount": 0
     }
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "ORD-705533",
+      "userId": 1857419718,
+      "productId": "prod_1791467326875",
+      "productName": "اکانت فیک نامبر امریکا ریپ عموم📊",
+      "price": 210000,
+      "status": "pending_payment",
+      "createdAt": "2026-10-08T13:49:02.664Z"
+    }
+  ],
   "states": {},
   "settings": {
     "shop_open": true,
