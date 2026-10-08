@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 25,
+      "stock": 24,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -36,16 +36,6 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
-    },
-    {
-      "id": "prod_1791459431359",
-      "name": "یک",
-      "category": "اکانت جمینای",
-      "price": 350000,
-      "stock": 0,
-      "description": "گا",
-      "active": true,
-      "createdAt": "2026-10-08T11:37:11.359Z"
     }
   ],
   "users": {
@@ -54,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -71,13 +61,21 @@
       "ordersCount": 0
     }
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "ORD-783673",
+      "userId": 1857419718,
+      "productId": "gemini_adv_share",
+      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "price": 160000,
+      "status": "pending_payment",
+      "createdAt": "2026-10-08T14:07:03.016Z"
+    }
+  ],
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام <b>{name}</b> عزیز! 💎\\n\\nبه <b>{shop_name}</b> خوش آمدید.\\nتمامی اشتراک‌ها و اکانت‌های پرمیوم و هوش مصنوعی با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\\n\\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>",
-    "card_number": "۶۰۳۷-۹۹۷۰-۰۰۰۰-۰۰۰۰",
-    "card_holder": "کیان (مدیریت فروشگاه)"
+    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
   "channels": [
     {
