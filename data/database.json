@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 24,
+      "stock": 25,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -23,7 +23,7 @@
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
       "price": 490000,
-      "stock": 8,
+      "stock": 4,
       "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
       "active": true
     },
@@ -44,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -61,17 +61,7 @@
       "ordersCount": 0
     }
   },
-  "orders": [
-    {
-      "orderId": "ORD-270451",
-      "userId": 1857419718,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
-      "status": "pending_payment",
-      "createdAt": "2026-10-08T14:35:33.383Z"
-    }
-  ],
+  "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
