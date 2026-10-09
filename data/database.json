@@ -18,6 +18,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791557921561",
+      "name": "کتلت گلپایگانی",
+      "category": "اکانت جمینای",
+      "price": 100000,
+      "stock": 0,
+      "description": "گوشت مرغ",
+      "active": true,
+      "createdAt": "2026-10-09T14:58:41.561Z"
     }
   ],
   "users": {
@@ -44,15 +54,7 @@
     }
   },
   "orders": [],
-  "states": {
-    "8678906046": {
-      "state": "awaiting_stock",
-      "data": {
-        "productId": "gemini_api_pro"
-      },
-      "updatedAt": 1791557873587
-    }
-  },
+  "states": {},
   "settings": {
     "shop_open": true,
     "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
