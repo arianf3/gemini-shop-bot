@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 24,
+      "stock": 25,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -36,6 +36,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791549744291",
+      "name": "1[5274099962655816924]",
+      "category": "اکانت جمینای",
+      "price": 82,
+      "stock": 8,
+      "description": "8",
+      "active": true,
+      "createdAt": "2026-10-09T12:42:24.291Z"
     }
   ],
   "users": {
@@ -44,7 +54,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -61,17 +71,7 @@
       "ordersCount": 0
     }
   },
-  "orders": [
-    {
-      "orderId": "ORD-408711",
-      "userId": 1857419718,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
-      "status": "pending_payment",
-      "createdAt": "2026-10-09T12:36:58.371Z"
-    }
-  ],
+  "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
