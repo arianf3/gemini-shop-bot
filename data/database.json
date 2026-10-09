@@ -39,6 +39,13 @@
     }
   ],
   "users": {
+    "332795733": {
+      "id": 332795733,
+      "first_name": "КИАН",
+      "username": "pvNWO",
+      "joinedAt": "2026-10-09T17:03:32.850Z",
+      "ordersCount": 0
+    },
     "1857419718": {
       "id": 1857419718,
       "first_name": "KiAN",
@@ -70,13 +77,7 @@
     "card_number": "6219861420055237",
     "card_holder": "امیر ابرار درخشان"
   },
-  "channels": [
-    {
-      "username": "rad_protocol",
-      "title": "کانال رسمی RadProtocol",
-      "link": "https://t.me/rad_protocol"
-    }
-  ],
+  "channels": [],
   "admins": [
     8602316735,
     8678906046,
