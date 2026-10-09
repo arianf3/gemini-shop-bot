@@ -10,6 +10,24 @@
       "active": false
     },
     {
+      "id": "gemini_adv_share",
+      "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "category": "اشتراکی",
+      "price": 160000,
+      "stock": 25,
+      "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
+      "active": true
+    },
+    {
+      "id": "gemini_api_pro",
+      "name": "اکانت و لایسنس Gemini 1.5 Pro API",
+      "category": "توسعه‌دهندگان",
+      "price": 490000,
+      "stock": 8,
+      "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
+      "active": true
+    },
+    {
       "id": "prod_1791382349589",
       "name": "اکانت ۶ ماهه Ultra Gemini",
       "category": "عمومی",
@@ -20,24 +38,17 @@
       "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
-      "id": "prod_1791565602045",
-      "name": "فروش تون 💎",
+      "id": "prod_1791568056383",
+      "name": "تون",
       "category": "اکانت جمینای",
       "price": 420000,
-      "stock": 3,
-      "description": "قیمت هر واحد تون 420000 تومان",
+      "stock": 10,
+      "description": "ارز تون",
       "active": true,
-      "createdAt": "2026-10-09T17:06:42.045Z"
+      "createdAt": "2026-10-09T17:47:36.383Z"
     }
   ],
   "users": {
-    "332795733": {
-      "id": 332795733,
-      "first_name": "КИАН",
-      "username": "pvNWO",
-      "joinedAt": "2026-10-09T17:03:32.850Z",
-      "ordersCount": 0
-    },
     "1857419718": {
       "id": 1857419718,
       "first_name": "KiAN",
@@ -64,16 +75,13 @@
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی خدمات مجازی را یکجا و با بالاترین کیفیت از کیان استور تهیه کنید.✈️\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:",
-    "store_ton_wallet": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---",
-    "card_number": "6219861420055237",
-    "card_holder": "امیر ابرار درخشان"
+    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
   "channels": [
     {
-      "username": "my_vibe747",
-      "title": "\"𝗥𝗲𝗮𝗹",
-      "link": "https://t.me/my_vibe747"
+      "username": "rad_protocol",
+      "title": "کانال رسمی RadProtocol",
+      "link": "https://t.me/rad_protocol"
     }
   ],
   "admins": [
