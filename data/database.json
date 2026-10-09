@@ -77,7 +77,13 @@
     "card_number": "6219861420055237",
     "card_holder": "امیر ابرار درخشان"
   },
-  "channels": [],
+  "channels": [
+    {
+      "username": "my_vibe747",
+      "title": "\"𝗥𝗲𝗮𝗹",
+      "link": "https://t.me/my_vibe747"
+    }
+  ],
   "admins": [
     8602316735,
     8678906046,
