@@ -66,7 +66,9 @@
   "settings": {
     "shop_open": true,
     "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی خدمات مجازی را یکجا و با بالاترین کیفیت از کیان استور تهیه کنید.✈️\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:",
-    "store_ton_wallet": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---"
+    "store_ton_wallet": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---",
+    "card_number": "6219861420055237",
+    "card_holder": "امیر ابرار درخشان"
   },
   "channels": [
     {
