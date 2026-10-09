@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 24,
+      "stock": 25,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -58,30 +58,25 @@
       "first_name": "Arian",
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
-      "ordersCount": 1
+      "ordersCount": 0
     }
   },
-  "orders": [
-    {
-      "orderId": "ORD-755150",
-      "userId": 8678906046,
-      "productId": "gemini_adv_share",
-      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "price": 160000,
-      "status": "pending_payment",
-      "createdAt": "2026-10-09T13:00:04.771Z"
-    }
-  ],
+  "orders": [],
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام <b>{name}</b> عزیز! <tg-emoji emoji-id=\"5427168083074628963\">💎</tg-emoji> <tg-emoji emoji-id=\"5325547803936572038\">✨</tg-emoji>\n\nبه <b>{shop_name}</b> خوش آمدید. <tg-emoji emoji-id=\"5217822164362739968\">👑</tg-emoji>\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) و شارژ تون با گارانتی تعویض و تحویل سریع ارائه می‌شوند. <tg-emoji emoji-id=\"5456140674028019486\">⚡️</tg-emoji>\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>"
+    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
   "channels": [
     {
       "username": "rad_protocol",
       "title": "کانال رسمی RadProtocol",
       "link": "https://t.me/rad_protocol"
+    },
+    {
+      "username": "truust_kian",
+      "title": "KIAN TRUST",
+      "link": "https://t.me/truust_kian"
     }
   ],
   "admins": [
