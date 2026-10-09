@@ -36,16 +36,6 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
-    },
-    {
-      "id": "prod_1791549744291",
-      "name": "1[5274099962655816924]",
-      "category": "اکانت جمینای",
-      "price": 82,
-      "stock": 8,
-      "description": "8",
-      "active": true,
-      "createdAt": "2026-10-09T12:42:24.291Z"
     }
   ],
   "users": {
@@ -54,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 1
+      "ordersCount": 0
     },
     "8602316735": {
       "id": 8602316735,
@@ -68,18 +58,18 @@
       "first_name": "Arian",
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
-      "ordersCount": 0
+      "ordersCount": 1
     }
   },
   "orders": [
     {
-      "orderId": "ORD-406769",
-      "userId": 1857419718,
+      "orderId": "ORD-755150",
+      "userId": 8678906046,
       "productId": "gemini_adv_share",
       "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "price": 160000,
       "status": "pending_payment",
-      "createdAt": "2026-10-09T12:42:49.149Z"
+      "createdAt": "2026-10-09T13:00:04.771Z"
     }
   ],
   "states": {},
