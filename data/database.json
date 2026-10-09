@@ -18,6 +18,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791565602045",
+      "name": "فروش تون 💎",
+      "category": "اکانت جمینای",
+      "price": 420000,
+      "stock": 3,
+      "description": "قیمت هر واحد تون 420000 تومان",
+      "active": true,
+      "createdAt": "2026-10-09T17:06:42.045Z"
     }
   ],
   "users": {
