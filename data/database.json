@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 25,
+      "stock": 24,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -44,7 +44,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -61,7 +61,17 @@
       "ordersCount": 0
     }
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "ORD-435520",
+      "userId": 1857419718,
+      "productId": "gemini_adv_share",
+      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "price": 160000,
+      "status": "pending_payment",
+      "createdAt": "2026-10-09T13:49:21.558Z"
+    }
+  ],
   "states": {},
   "settings": {
     "shop_open": true,
@@ -72,11 +82,6 @@
       "username": "rad_protocol",
       "title": "کانال رسمی RadProtocol",
       "link": "https://t.me/rad_protocol"
-    },
-    {
-      "username": "truust_kian",
-      "title": "KIAN TRUST",
-      "link": "https://t.me/truust_kian"
     }
   ],
   "admins": [
