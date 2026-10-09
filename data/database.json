@@ -14,7 +14,7 @@
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
       "category": "اشتراکی",
       "price": 160000,
-      "stock": 25,
+      "stock": 24,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
       "active": true
     },
@@ -54,7 +54,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -71,7 +71,17 @@
       "ordersCount": 0
     }
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "ORD-406769",
+      "userId": 1857419718,
+      "productId": "gemini_adv_share",
+      "productName": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
+      "price": 160000,
+      "status": "pending_payment",
+      "createdAt": "2026-10-09T12:42:49.149Z"
+    }
+  ],
   "states": {},
   "settings": {
     "shop_open": true,
