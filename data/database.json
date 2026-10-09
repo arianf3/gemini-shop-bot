@@ -18,6 +18,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791530900111",
+      "name": "تون",
+      "category": "اکانت جمینای",
+      "price": 410000,
+      "stock": 725,
+      "description": "تعداد را انتخاب کنید",
+      "active": true,
+      "createdAt": "2026-10-09T07:28:20.111Z"
     }
   ],
   "users": {
