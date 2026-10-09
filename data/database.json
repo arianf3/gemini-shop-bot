@@ -75,7 +75,7 @@
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
+    "start_message": "سلام <b>{name}</b> عزیز! <tg-emoji emoji-id=\"5427168083074628963\">💎</tg-emoji> <tg-emoji emoji-id=\"5325547803936572038\">✨</tg-emoji>\n\nبه <b>{shop_name}</b> خوش آمدید. <tg-emoji emoji-id=\"5217822164362739968\">👑</tg-emoji>\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) و شارژ تون با گارانتی تعویض و تحویل سریع ارائه می‌شوند. <tg-emoji emoji-id=\"5456140674028019486\">⚡️</tg-emoji>\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>"
   },
   "channels": [
     {
