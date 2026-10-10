@@ -36,19 +36,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
-    },
-    {
-      "id": "prod_1791568056383",
-      "name": "تون",
-      "category": "اکانت جمینای",
-      "price": 420000,
-      "stock": 10,
-      "description": "ارز تون",
-      "active": true,
-      "createdAt": "2026-10-09T17:47:36.383Z"
     }
   ],
   "users": {
+    "332795733": {
+      "id": 332795733,
+      "first_name": "КИАН",
+      "username": "pvNWO",
+      "joinedAt": "2026-10-10T11:34:14.098Z",
+      "ordersCount": 0
+    },
     "1857419718": {
       "id": 1857419718,
       "first_name": "KiAN",
@@ -72,18 +69,18 @@
     }
   },
   "orders": [],
-  "states": {},
+  "states": {
+    "1857419718": {
+      "state": "awaiting_channel_input",
+      "data": {},
+      "updatedAt": 1791632110026
+    }
+  },
   "settings": {
     "shop_open": true,
     "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
-  "channels": [
-    {
-      "username": "rad_protocol",
-      "title": "کانال رسمی RadProtocol",
-      "link": "https://t.me/rad_protocol"
-    }
-  ],
+  "channels": [],
   "admins": [
     8602316735,
     8678906046,
