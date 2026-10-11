@@ -66,12 +66,7 @@
   "settings": {
     "shop_open": true,
     "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:",
-    "ai_bot": {
-      "enabled": true,
-      "base_url": "https://v1m.ir/v1",
-      "api_key": "v1m_live_24a6a1ffcfdf717b0e1c38321e316378a3009a1f495dd286",
-      "model": "ag/gemini-3.8-flash-low"
-    }
+    "store_ton_wallet": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---"
   },
   "channels": [
     {
