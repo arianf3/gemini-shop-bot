@@ -3,59 +3,53 @@
     {
       "id": "gemini_adv_1m",
       "name": "اکانت اختصاصی Gemini Advanced (۱ ماهه)",
-      "category": "اختصاصی",
-      "price": 390000,
-      "stock": 12,
+      "category": "🤖 ابزارهای هوش مصنوعی",
+      "price": 450000,
+      "stock": 10,
       "description": "• فعال‌سازی روی جیمیل شما یا اکانت آماده\n• دسترسی به مدل‌های Ultra و 1.5 Pro با سقف نامحدود\n• همراه با ۲ ترابایت فضای ابری Google One\n• گارانتی و پشتیبانی کامل ۳۰ روزه",
-      "active": false
+      "active": true,
+      "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
       "id": "gemini_adv_share",
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "category": "اشتراکی",
-      "price": 160000,
+      "category": "🤖 ابزارهای هوش مصنوعی",
+      "price": 180000,
       "stock": 25,
       "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
-      "active": true
+      "active": true,
+      "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
       "id": "gemini_api_pro",
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
-      "category": "توسعه‌دهندگان",
-      "price": 490000,
-      "stock": 8,
+      "category": "🤖 ابزارهای هوش مصنوعی",
+      "price": 850000,
+      "stock": 5,
       "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
-      "active": true
+      "active": true,
+      "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
       "id": "prod_1791382349589",
       "name": "اکانت ۶ ماهه Ultra Gemini",
-      "category": "عمومی",
-      "price": 990000,
-      "stock": 20,
-      "description": "اکانت اولترا با بالاترین سرعت",
-      "active": false,
+      "category": "👑 اکانت‌های پرمیوم",
+      "price": 500000,
+      "stock": 5,
+      "description": "دسترسی نامحدود ۶ ماهه به قابلیت‌های هوش مصنوعی پیشرفته گوگل اولترا با ضمانت تعویض",
+      "active": true,
       "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
-      "id": "prod_1791738836419",
-      "name": "🛍 مشاهده محصولات",
-      "category": "عمومی",
-      "price": 533,
-      "stock": 2,
-      "description": "ع",
+      "id": "prod_1791568056383",
+      "name": "ارز دیجیتال تون (TON Coin)",
+      "category": "💎 ارز دیجیتال تون (TON)",
+      "price": 420000,
+      "stock": 10,
+      "description": "خرید مستقیم تون (TON) با واریز فوری به آدرس کیف‌پول تلگرام و تون‌کیپر شما",
+      "requiresWallet": true,
       "active": true,
-      "createdAt": "2026-10-11T17:13:56.419Z"
-    },
-    {
-      "id": "prod_1791738863418",
-      "name": "گل",
-      "category": "عمومی",
-      "price": 45,
-      "stock": 4,
-      "description": "جبکبجل",
-      "active": true,
-      "createdAt": "2026-10-11T17:14:23.418Z"
+      "createdAt": "2026-10-09T17:47:36.383Z"
     }
   ],
   "users": {
@@ -75,7 +69,7 @@
     },
     "8678906046": {
       "id": 8678906046,
-      "first_name": "Arian",
+      "first_name": "Arian Dev",
       "username": "arianf3",
       "joinedAt": "2026-10-07T16:29:28.169Z",
       "ordersCount": 0
@@ -85,7 +79,16 @@
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
+    "start_message": "سلام <b>{name}</b> عزیز! <tg-emoji emoji-id=\"5427168083074628963\">💎</tg-emoji>\n\nبه <b>{shop_name}</b> خوش آمدید. <tg-emoji emoji-id=\"5217822164362739968\">👑</tg-emoji>\nمرجع تخصصی اشتراک‌های پرمیوم، ابزارهای هوش مصنوعی و خرید فوری ارز دیجیتال تون (TON).\nتمامی سفارشات با گارانتی کامل و تحویل سریع ارائه می‌شوند. <tg-emoji emoji-id=\"5456140674028019486\">⚡</tg-emoji>\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>",
+    "card_number": "6037998246343513",
+    "card_holder": "کیان پیرفلک",
+    "store_ton_wallet": "UQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_KE",
+    "ai_bot": {
+      "enabled": true,
+      "base_url": "http://127.0.0.1:20128/v1",
+      "api_key": "YOUR_AI_KEY",
+      "model": "ag/gemini-3.8-flash-low"
+    }
   },
   "channels": [
     {
