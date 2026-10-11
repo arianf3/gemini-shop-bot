@@ -70,7 +70,7 @@
       "base_url": "http://localhost:20128/v1",
       "api_key": "sk-c350ba5fd07b999c-22iklo-11db8398",
       "model": "ag/gemini-3.8-flash-low",
-      "enabled": false
+      "enabled": true
     }
   },
   "channels": [
