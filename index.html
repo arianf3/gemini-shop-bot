@@ -897,13 +897,15 @@
 
     function filterProducts(cat, btn) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if (btn) btn.classList.add('active');
 
       if (cat === 'all') {
-        renderCategoryTabs(allProducts);
         renderProducts(allProducts);
       } else {
-        const filtered = allProducts.filter(p => (p.category || 'عمومی').includes(cat) || (p.name || '').includes(cat));
+        const filtered = allProducts.filter(p => {
+          const itemCat = (p.category || 'عمومی').trim();
+          return itemCat === cat || itemCat.includes(cat);
+        });
         renderProducts(filtered);
       }
     }
