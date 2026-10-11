@@ -3,44 +3,57 @@
     {
       "id": "gemini_adv_1m",
       "name": "اکانت اختصاصی Gemini Advanced (۱ ماهه)",
-      "category": "اختصاصی",
-      "price": 390000,
-      "stock": 12,
-      "description": "• فعال‌سازی روی جیمیل شما یا اکانت آماده\n• دسترسی به مدل‌های Ultra و 1.5 Pro با سقف نامحدود\n• همراه با ۲ ترابایت فضای ابری Google One\n• گارانتی و پشتیبانی کامل ۳۰ روزه",
-      "active": false
+      "category": "هوش مصنوعی",
+      "price": 450000,
+      "stock": 10,
+      "description": "دسترسی کامل به مدل‌های هوش مصنوعی پیشرفته با لایسنس معتبر و گارانتی تعویض",
+      "active": false,
+      "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
       "id": "gemini_adv_share",
       "name": "اکانت اشتراکی Gemini Advanced (۱ ماهه)",
-      "category": "اشتراکی",
-      "price": 160000,
+      "category": "هوش مصنوعی",
+      "price": 180000,
       "stock": 25,
-      "description": "• تحویل اکانت آماده با ایمیل و پسورد اختصاصی\n• دسترسی کامل به قابلیت‌های هوش مصنوعی پیشرفته گوگل\n• قیمت کاملاً اقتصادی برای دانشجویان و پژوهشگران\n• تحویل آنی پس از پرداخت",
-      "active": true
+      "description": "اکانت اشتراکی اقتصادی و پرسرعت برای مصارف روزمره و کدنویسی",
+      "active": false,
+      "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
       "id": "gemini_api_pro",
       "name": "اکانت و لایسنس Gemini 1.5 Pro API",
       "category": "توسعه‌دهندگان",
-      "price": 490000,
-      "stock": 8,
-      "description": "• کلید اختصاصی API برای برنامه‌نویسان و بات‌ها\n• کانتکست ویندوز ۲ میلیون توکن (بالاترین سطح در دنیا)\n• بدون فیلتر و با ریت‌لیمیت بالا\n• راهنمای کامل اتصال به پایتون، نودجی‌اس و لنگ‌چین",
-      "active": true
-    },
-    {
-      "id": "prod_1791382349589",
-      "name": "اکانت ۶ ماهه Ultra Gemini",
-      "category": "عمومی",
-      "price": 990000,
-      "stock": 20,
-      "description": "اکانت اولترا با بالاترین سرعت",
+      "price": 850000,
+      "stock": 5,
+      "description": "دسترسی ویژه به کلید API اختصاصی برای توسعه‌دهندگان با محدودیت بسیار بالا",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
     },
     {
+      "id": "prod_1791382349589",
+      "name": "اکانت ۶ ماهه Ultra Gemini",
+      "category": "اکانت پرمیوم",
+      "price": 500000,
+      "stock": 5,
+      "description": "بهترین اکانت جهان",
+      "active": false,
+      "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791568056383",
+      "name": "ارز دیجیتال تون (TON)",
+      "category": "ارز دیجیتال تون",
+      "price": 420000,
+      "stock": 10,
+      "description": "خرید مستقیم تون (TON Coin) با واریز فوری به کیف‌پول تلگرام و تون‌کیپر شما",
+      "active": true,
+      "createdAt": "2026-10-09T17:47:36.383Z"
+    },
+    {
       "id": "prod_1791725083402",
       "name": "شیب",
-      "category": "اکانت جمینای",
+      "category": "ارز دیجیتال",
       "price": 666666666666,
       "stock": 666,
       "description": "شیب اعلا",
@@ -49,45 +62,45 @@
     }
   ],
   "users": {
-    "1857419718": {
-      "id": 1857419718,
-      "first_name": "KiAN",
-      "username": "xHAMISHEGI",
-      "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+    "8678906046": {
+      "id": 8678906046,
+      "name": "Arian Dev",
+      "username": "",
+      "joinedAt": "2026-10-07T14:15:00.000Z",
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
-      "first_name": "Arian",
-      "username": "",
-      "joinedAt": "2026-10-07T16:22:19.142Z",
+      "name": "Arian",
+      "username": "arianf3",
+      "joinedAt": "2026-10-07T14:20:00.000Z",
       "ordersCount": 0
     },
-    "8678906046": {
-      "id": 8678906046,
-      "first_name": "Arian",
-      "username": "arianf3",
-      "joinedAt": "2026-10-07T16:29:28.169Z",
+    "7746536015": {
+      "id": 7746536015,
+      "name": "Kian",
+      "username": "xHAMISHEGI",
+      "joinedAt": "2026-10-07T14:25:00.000Z",
       "ordersCount": 0
     }
   },
   "orders": [],
-  "states": {},
+  "admins": [
+    8678906046,
+    8602316735,
+    7746536015,
+    8709663394
+  ],
   "settings": {
     "shop_open": true,
-    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
-  },
-  "channels": [
-    {
-      "username": "rad_protocol",
-      "title": "کانال رسمی RadProtocol",
-      "link": "https://t.me/rad_protocol"
+    "start_message": "سلام <b>{name}</b> عزیز! <tg-emoji emoji-id=\"5427168083074628963\">💎</tg-emoji>\n\nبه <b>{shop_name}</b> خوش آمدید. <tg-emoji emoji-id=\"5217822164362739968\">👑</tg-emoji>\nمرجع تخصصی اشتراک‌های پرمیوم، ابزارهای هوش مصنوعی و خرید فوری ارز دیجیتال تون (TON).\nتمامی سفارشات با گارانتی کامل و تحویل سریع ارائه می‌شوند. <tg-emoji emoji-id=\"5456140674028019486\">⚡</tg-emoji>\n\n👇 <b>لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:</b>",
+    "card_number": "6037998246343513",
+    "card_holder": "کیان پیرفلک",
+    "ai_bot": {
+      "enabled": true,
+      "base_url": "http://127.0.0.1:20128/v1",
+      "api_key": "YOUR_AI_KEY",
+      "model": "ag/gemini-3.8-flash-low"
     }
-  ],
-  "admins": [
-    8602316735,
-    8678906046,
-    7746536015,
-    1857419718
-  ]
+  }
 }
