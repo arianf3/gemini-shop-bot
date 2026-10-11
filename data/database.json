@@ -69,7 +69,7 @@
     "ai_bot": {
       "enabled": true,
       "base_url": "https://v1m.ir/v1",
-      "api_key": "",
+      "api_key": "v1m_live_24a6a1ffcfdf717b0e1c38321e316378a3009a1f495dd286",
       "model": "ag/gemini-3.8-flash-low"
     }
   },
