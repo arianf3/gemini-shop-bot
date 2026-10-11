@@ -46,6 +46,16 @@
       "description": "ع",
       "active": true,
       "createdAt": "2026-10-11T17:13:56.419Z"
+    },
+    {
+      "id": "prod_1791738863418",
+      "name": "گل",
+      "category": "عمومی",
+      "price": 45,
+      "stock": 4,
+      "description": "جبکبجل",
+      "active": true,
+      "createdAt": "2026-10-11T17:14:23.418Z"
     }
   ],
   "users": {
