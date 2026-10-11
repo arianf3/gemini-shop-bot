@@ -68,7 +68,8 @@
     "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:",
     "ai_bot": {
       "base_url": "http://localhost:20128/v1",
-      "api_key": "sk-c350ba5fd07b999c-22iklo-11db8398"
+      "api_key": "sk-c350ba5fd07b999c-22iklo-11db8398",
+      "model": "ag/gemini-3.8-flash-low"
     }
   },
   "channels": [
