@@ -36,6 +36,16 @@
       "description": "اکانت اولترا با بالاترین سرعت",
       "active": false,
       "createdAt": "2026-10-07T14:12:29.589Z"
+    },
+    {
+      "id": "prod_1791738836419",
+      "name": "🛍 مشاهده محصولات",
+      "category": "عمومی",
+      "price": 533,
+      "stock": 2,
+      "description": "ع",
+      "active": true,
+      "createdAt": "2026-10-11T17:13:56.419Z"
     }
   ],
   "users": {
@@ -65,10 +75,7 @@
   "states": {},
   "settings": {
     "shop_open": true,
-    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:",
-    "store_ton_wallet": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---",
-    "card_number": "6219861420055237",
-    "card_holder": "امیر ابرار درخشان"
+    "start_message": "سلام {name} عزیز! 💎\n\nبه {shop_name} خوش آمدید.\nتمامی اشتراک‌ها و اکانت‌های هوش مصنوعی گوگل (Gemini Advanced & Ultra) با گارانتی تعویض و تحویل سریع ارائه می‌شوند.\n\n👇 لطفاً از منوی زیر گزینه مورد نظرتان را انتخاب کنید:"
   },
   "channels": [
     {
