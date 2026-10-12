@@ -45,7 +45,7 @@
       "name": "ارز دیجیتال تون (TON Coin)",
       "category": "💎 ارز دیجیتال تون (TON)",
       "price": 420000,
-      "stock": 10,
+      "stock": 9,
       "description": "خرید مستقیم تون (TON) با واریز فوری به آدرس کیف‌پول تلگرام و تون‌کیپر شما",
       "requiresWallet": true,
       "active": true,
@@ -58,7 +58,7 @@
       "first_name": "KiAN",
       "username": "xHAMISHEGI",
       "joinedAt": "2026-10-07T19:24:48.111Z",
-      "ordersCount": 0
+      "ordersCount": 1
     },
     "8602316735": {
       "id": 8602316735,
@@ -75,7 +75,18 @@
       "ordersCount": 0
     }
   },
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "ORD-475229",
+      "userId": 1857419718,
+      "productId": "prod_1791568056383",
+      "productName": "ارز دیجیتال تون (TON Coin)",
+      "price": 420000,
+      "status": "pending_payment",
+      "createdAt": "2026-10-12T11:24:40.887Z",
+      "walletAddress": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---"
+    }
+  ],
   "states": {},
   "settings": {
     "shop_open": true,
