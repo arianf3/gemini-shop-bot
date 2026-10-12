@@ -82,9 +82,11 @@
       "productId": "prod_1791568056383",
       "productName": "ارز دیجیتال تون (TON Coin)",
       "price": 420000,
-      "status": "pending_payment",
+      "status": "awaiting_verification",
       "createdAt": "2026-10-12T11:24:40.887Z",
-      "walletAddress": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---"
+      "walletAddress": "UQB-0bQKnbKGEiWd9xkuiHFJOfSpctJH9RiOLz9QI165h---",
+      "receiptFileId": "AgACAgQAAxkBAAICV2rMw4swY3Qoj2dnX0NipDv89PP8AAIdEGsb2XpoUnovXvBSwHqIAQADAgADdwADPQQ",
+      "receiptSentAt": "2026-10-12T11:25:00.065Z"
     }
   ],
   "states": {},
