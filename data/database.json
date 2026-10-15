@@ -53,6 +53,13 @@
     }
   ],
   "users": {
+    "332795733": {
+      "id": 332795733,
+      "first_name": "КИАН",
+      "username": "pvNWO",
+      "joinedAt": "2026-10-15T07:00:56.358Z",
+      "ordersCount": 0
+    },
     "1857419718": {
       "id": 1857419718,
       "first_name": "KiAN",
@@ -117,13 +124,7 @@
       "model": "ag/gemini-3.8-flash-low"
     }
   },
-  "channels": [
-    {
-      "username": "rad_protocol",
-      "title": "کانال رسمی RadProtocol",
-      "link": "https://t.me/rad_protocol"
-    }
-  ],
+  "channels": [],
   "admins": [
     8602316735,
     8678906046,
